@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Search</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            position: relative; /* Positioning context for the image */
+            overflow: hidden; /* Hide overflow for better aesthetics */
+        }
+        .background-image {
+            position: absolute;
+            top: -60%; /* Move the image up */
+            left: 0;
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            z-index: -1; /* Send the image behind other elements */
+        }
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin-bottom: -590px;
+            border-radius: 20px; /* Increased border-radius for the container */
+        }
+        input {
+            padding: 10px 40px; /* Adds padding for the icon */
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-radius: 20px; /* Increased border-radius for the input */
+            border: none; /* Remove default border */
+            background: rgba(0, 0, 0, 0.7); /* Match the container background */
+            color: white; /* Text color */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px; /* Increased border-radius for the button */
+            border: none; /* Remove default border */
+            background-color: #131414; /* Button color */
+            color: white;
+            margin-top: 10px; /* Space between input and button */
+        }
+        .message, .results, .date {
+            margin-top: 10px;
+        }
+        .icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: white;
+        }
+        .input-container {
+            position: relative;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <img src="lim.jpg" alt="Background" class="background-image"> <!-- Replace with your image URL -->
+    <div class="container">
+        <h1>Student Search</h1>
+        <div class="input-container">
+            <i class="icon">🔍</i>
+            <input type="text" id="studentNumber" placeholder="student number" maxlength="9">
+        </div>
+        <button onclick="searchStudent()">Search</button>
+        <div class="message" id="message"></div>
+        <div class="date">2025/01 Student Results</div>
+        <div class="results" id="results"></div>
+    </div>
+
+    <script>
+        function searchStudent() {
+            const studentNumber = document.getElementById('studentNumber').value;
+            const messageDiv = document.getElementById('message');
+            const resultsDiv = document.getElementById('results');
+
+            // Check if the student number starts with "9010" and is 9 digits long
+            if (!/^(9010)\d{5}$/.test(studentNumber)) {
+                messageDiv.innerText = 'Try again, there is an error loading your results';
+                resultsDiv.innerHTML = ''; // Clear previous results
+            } else {
+                messageDiv.innerText = 'You failed.'; // Results in a single line
+            }
+        }
+    </script>
+</body>
+</html>
