@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
-            color: white;
+            background-color: rgb (34, 33, 33);
             position: relative; /* Positioning context for the image */
             overflow: hidden; /* Hide overflow for better aesthetics */
         }
@@ -23,6 +23,9 @@
             width: 100%;
             height: auto; /* Maintain aspect ratio */
             z-index: -1; /* Send the image behind other elements */
+        }
+        h1{
+            color: white;
         }
         .container {
             text-align: center;
@@ -68,9 +71,9 @@
     </style>
 </head>
 <body>
-    <img src="lim.jpg" alt="Background" class="background-image"> <!-- Replace with your image URL -->
+    <!-- Replace with your image URL -->
     <div class="container">
-        <h1>Student Search</h1>
+        <h1>Limkokwing University <br> Student Search</h1>
         <div class="input-container">
             <i class="icon">🔍</i>
             <input type="text" id="studentNumber" placeholder="student number" maxlength="9">
